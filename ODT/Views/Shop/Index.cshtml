@@ -4,8 +4,10 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewBag.Title = Localizer["winkelTitel"];
+    ViewData["Title"] = Localizer["winkelTitel"];
     Layout = "_Layout";
+    
 }
 
-<h2>title</h2>
+<h2>@ViewData["myTitle"]</h2>
+<p>@ViewData["Title"]</p>

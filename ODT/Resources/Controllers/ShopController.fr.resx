@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <root>
     <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
@@ -8,10 +8,6 @@
             </data>
         </xsd:element>
     </xsd:schema>
-
-    <data name="winkelTitel">
-        <value>Magasin des drapeaux European</value>
-    </data>
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>

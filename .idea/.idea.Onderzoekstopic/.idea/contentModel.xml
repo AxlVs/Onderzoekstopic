@@ -63,6 +63,8 @@
         <e p="Resources" t="Include">
           <e p="Controllers" t="Include">
             <e p="HomeController.nl.resx" t="Include" />
+            <e p="ShopController.fr.resx" t="Include" />
+            <e p="ShopController.nl.resx" t="Include" />
           </e>
           <e p="Views" t="Include">
             <e p="Home" t="Include">
