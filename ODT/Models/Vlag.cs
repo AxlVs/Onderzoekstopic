@@ -6,6 +6,7 @@ namespace ODT.Models
   {
     public int ID { get; set; }
     public String Naam { get; set; }
+    public String LandCode { get; set; }
     public double Prijs { get; set; }
     public String Beschrijving { get; set; }
   }
