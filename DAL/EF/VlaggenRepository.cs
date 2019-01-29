@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using ODT.Models;
 
 namespace DAL.EF
@@ -11,17 +12,16 @@ namespace DAL.EF
     public VlaggenRepository()
     {
       this.context = new VlaggenDbContext();
-      
     }
 
     public IEnumerable<Vlag> ReadVlaggen()
     {
-      throw new System.NotImplementedException();
+      return context.Vlags.AsEnumerable();
     }
 
     public Vlag ReadVlag(int vlagId)
     {
-      throw new System.NotImplementedException();
+      return context.Vlags.Single(v => v.ID == vlagId);
     }
   }
 }
