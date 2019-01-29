@@ -6,6 +6,19 @@
     <e p="C:\Users\Axl\.Rider2018.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Axl\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Onderzoekstopic.-2130294640.00" t="ExcludeRecursive" />
     <e p="D:\KDG\18 - 19\Onderzoekstoppics\Onderzoekstopic" t="IncludeFlat">
+      <e p="BL" t="IncludeRecursive">
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="BL.csproj" t="IncludeRecursive" />
+        <e p="IVlaggenManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="BL.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="VlaggenManager.cs" t="Include" />
+      </e>
       <e p="DAL" t="IncludeRecursive">
         <e p="Bin" t="ExcludeRecursive" />
         <e p="DAL.csproj" t="IncludeRecursive" />
