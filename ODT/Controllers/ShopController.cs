@@ -6,9 +6,9 @@ namespace ODT.Controllers
   public class ShopController : Controller
   {
     
-    private readonly IStringLocalizer<HomeController> _localizer;
+    private readonly IStringLocalizer<ShopController> _localizer;
 
-    public ShopController(IStringLocalizer<HomeController> localizer)
+    public ShopController(IStringLocalizer<ShopController> localizer)
     {
       _localizer = localizer;
     }
