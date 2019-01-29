@@ -11844,23 +11844,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Axl\\.nuget\\packages\\": {},
+    "C:\\Users\\Buem\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\Axl\\.nuget\\packages\\",
-      "outputPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\DAL\\obj\\",
+      "projectPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\Buem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Axl\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Buem\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -11871,8 +11871,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\ODT\\ODT.csproj": {
-              "projectPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\ODT\\ODT.csproj"
+            "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\ODT\\ODT.csproj": {
+              "projectPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\ODT\\ODT.csproj"
             }
           }
         }
