@@ -6,6 +6,7 @@
             
         </xsd:element>
     </xsd:schema>
+    
     <resheader name="resmimetype">
         <value>text/microsoft-resx</value>
     </resheader>

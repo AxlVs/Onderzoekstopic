@@ -11826,23 +11826,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Buem\\.nuget\\packages\\": {},
+    "C:\\Users\\Axl\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\ODT\\ODT.csproj",
+      "projectUniqueName": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\ODT\\ODT.csproj",
       "projectName": "ODT",
-      "projectPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\ODT\\ODT.csproj",
-      "packagesPath": "C:\\Users\\Buem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\ODT\\obj\\",
+      "projectPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\ODT\\ODT.csproj",
+      "packagesPath": "C:\\Users\\Axl\\.nuget\\packages\\",
+      "outputPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\ODT\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Buem\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Axl\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
