@@ -6,15 +6,26 @@
     <e p="C:\Users\Axl\.Rider2018.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Axl\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Onderzoekstopic.-2130294640.00" t="ExcludeRecursive" />
     <e p="D:\KDG\18 - 19\Onderzoekstoppics\Onderzoekstopic" t="IncludeFlat">
+      <e p="DAL" t="IncludeRecursive">
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="DAL.csproj" t="IncludeRecursive" />
+        <e p="EF" t="Include">
+          <e p="VlaggenDbContext.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="DAL.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
       <e p="ODT" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="Bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
-        </e>
-        <e p="DAL" t="Include">
-          <e p="DbContext.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="ErrorViewModel.cs" t="Include" />
