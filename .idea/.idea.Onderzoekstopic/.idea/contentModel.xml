@@ -14,7 +14,7 @@
           <e p="HomeController.cs" t="Include" />
         </e>
         <e p="DAL" t="Include">
-          <e p="Vlaggen.cs" t="Include" />
+          <e p="DbContext.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="ErrorViewModel.cs" t="Include" />
