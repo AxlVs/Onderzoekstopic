@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace ODT
 {
@@ -31,6 +35,31 @@ namespace ODT
         options.MinimumSameSitePolicy = SameSiteMode.None;
       });
 
+      // Toevoegen localisation services aan de applicatie
+      services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
+
+      services.AddMvc()
+        .AddViewLocalization(
+          LanguageViewLocationExpanderFormat.Suffix,
+          opts => { opts.ResourcesPath = "Resources"; })
+        .AddDataAnnotationsLocalization();
+      
+      // Configureren van talen die we zullen ondersteunen
+      services.Configure<RequestLocalizationOptions>(
+        opts =>
+        {
+          var supportedCultures = new List<CultureInfo>
+          {
+            new CultureInfo("en-US"),
+            new CultureInfo("fr-FR"),
+            new CultureInfo("nl-BE"),
+            new CultureInfo("de-DE")
+          };
+
+          opts.DefaultRequestCulture = new RequestCulture("nl-BE");
+          opts.SupportedCultures = supportedCultures;
+          opts.SupportedUICultures = supportedCultures;
+        });
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
     }
@@ -52,6 +81,10 @@ namespace ODT
       app.UseStaticFiles();
       app.UseCookiePolicy();
 
+      //Configuratie van localization
+      var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+      app.UseRequestLocalization(options.Value);
+      
       app.UseMvc(routes =>
       {
         routes.MapRoute(
