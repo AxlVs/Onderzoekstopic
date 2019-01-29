@@ -15,7 +15,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resources" />
+      <Compile Update="Resources\Views\Home\Index.Designer.cs">
+        <DependentUpon>Index.resx</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
