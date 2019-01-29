@@ -4,7 +4,7 @@
     <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <xsd:element name="root" msdata:IsDataSet="true">
             <data name="winkelTitel">
-                <value>Belgische vlaggen winkel</value>
+                <value>Magasin des drapeaux European</value>
             </data>
         </xsd:element>
     </xsd:schema>

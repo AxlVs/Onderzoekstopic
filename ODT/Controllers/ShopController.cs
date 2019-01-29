@@ -15,7 +15,7 @@ namespace ODT.Controllers
 
     public IActionResult Index()
     {
-      ViewData["Europese vlaggen winkel"] = _localizer["Europese vlaggen winkel"];
+      ViewData["winkelTitel"] = _localizer["winkelTitel"];
       return View();
     }
   }
