@@ -1,7 +1,9 @@
 @model object
 
+@inject IViewLocalizer Localizer
+
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = Localizer["Europese vlaggen winkel"];
     Layout = "_Layout";
 }
 
