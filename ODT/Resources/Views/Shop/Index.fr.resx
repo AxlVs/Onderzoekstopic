@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <root>
-    <data name="winkelTitel">
-        <value>Magasin des drapeaux European</value>
+    <data name="winkelDescription">
+        <value>Magasin des drapeaux European descriptif</value>
     </data>
 </root>

@@ -4,10 +4,10 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = Localizer["winkelTitel"];
+    ViewData["viewTitle"] = Localizer["winkelDescription"];
     Layout = "_Layout";
     
 }
 
-<h2>@ViewData["myTitle"]</h2>
-<p>@ViewData["Title"]</p>
+<h2>@ViewData["controllerTitle"]</h2>
+<p>@ViewData["viewTitle"]</p>
