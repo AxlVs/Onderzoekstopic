@@ -7,4 +7,13 @@
     <data name="Belgie">
         <value>Belgique</value>
     </data>
+    <data name="Nederland">
+        <value>Neerlandais</value>
+    </data>
+    <data name="Frankrijk">
+        <value>France</value>
+    </data>
+    <data name="Verenigde Staten">
+        <value>Etats Unis</value>
+    </data>
 </root>

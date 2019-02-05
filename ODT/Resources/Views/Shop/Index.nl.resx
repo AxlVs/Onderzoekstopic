@@ -4,4 +4,16 @@
     <data name="winkelDescription">
         <value>Belgische vlaggen winkel beschrijving</value>
     </data>
+    <data name="Belgie">
+        <value>België</value>
+    </data>
+    <data name="Frankrijk">
+        <value>Frankrijk</value>
+    </data>
+    <data name="Verenigde Staten">
+        <value>Verenigde Staten</value>
+    </data>
+    <data name="Nederland">
+        <value>Kaashoofd</value>
+    </data>
 </root>
