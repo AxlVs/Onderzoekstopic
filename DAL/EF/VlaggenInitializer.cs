@@ -25,7 +25,7 @@ namespace DAL.EF
         ID = 1,
         Beschrijving = "Vlag van België",
         Naam = "Belgie",
-        LandCode = "BE",
+        LandCode = "nl-BE",
         Prijs = 19.99
       };
       
@@ -34,7 +34,7 @@ namespace DAL.EF
         ID = 2,
         Beschrijving = "Vlag van Nederland",
         Naam = "Nederland",
-        LandCode = "NL",
+        LandCode = "nl-NL",
         Prijs = 19.99
       };
       
@@ -43,13 +43,23 @@ namespace DAL.EF
         ID = 3,
         Beschrijving = "Vlag van Frankrijk",
         Naam = "Frankrijk",
-        LandCode = "FR",
+        LandCode = "fr-FR",
+        Prijs = 24.99
+      };
+      
+      Vlag v4 = new Vlag()
+      {
+        ID = 4,
+        Beschrijving = "Vlag van Verenigde Staten",
+        Naam = "Verenigde Staten",
+        LandCode = "en-US",
         Prijs = 24.99
       };
 
       context.Vlags.Add(v1);
-      context.Vlags.Add(v3);
       context.Vlags.Add(v2);
+      context.Vlags.Add(v3);
+      context.Vlags.Add(v4);
 
       context.SaveChanges();
     }

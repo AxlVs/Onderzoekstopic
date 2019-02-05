@@ -18,4 +18,8 @@
       <Folder Include="Resources\Views\Home" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\BL\BL.csproj" />
+    </ItemGroup>
+
 </Project>

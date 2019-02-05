@@ -4492,18 +4492,14 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "ODT/1.0.0": {
+      "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.1.4",
-          "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4"
-        },
         "compile": {
-          "bin/placeholder/ODT.dll": {}
+          "bin/placeholder/Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ODT.dll": {}
+          "bin/placeholder/Domain.dll": {}
         }
       }
     }
@@ -11830,37 +11826,38 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "ODT/1.0.0": {
+    "Domain/1.0.0": {
       "type": "project",
-      "path": "../ODT/ODT.csproj",
-      "msbuildProject": "../ODT/ODT.csproj"
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Domain >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
-      "Microsoft.NETCore.App >= 2.1.0",
-      "ODT >= 1.0.0"
+      "Microsoft.EntityFrameworkCore.Sqlite >= 2.1.4",
+      "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Buem\\.nuget\\packages\\": {},
+    "C:\\Users\\Axl\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\Buem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\DAL\\obj\\",
+      "projectPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\Axl\\.nuget\\packages\\",
+      "outputPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Buem\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Axl\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -11871,8 +11868,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\ODT\\ODT.csproj": {
-              "projectPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\ODT\\ODT.csproj"
+            "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\Domain\\Domain.csproj"
             }
           }
         }
@@ -11891,6 +11888,10 @@
             "target": "Package",
             "version": "[2.1.1, )",
             "autoReferenced": true
+          },
+          "Microsoft.EntityFrameworkCore.Sqlite": {
+            "target": "Package",
+            "version": "[2.1.4, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
