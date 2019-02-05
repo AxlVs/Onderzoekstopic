@@ -28,22 +28,18 @@
     };
     
     <partial name="_product" model="@product"/>
-    
+
+    product.current = false;
     foreach (Vlag vlag in @Model)
      {
          if (!vlag.LandCode.Equals(CultureInfo.CurrentCulture.ToString()))
          {
-             Product prod = new Product()
-             {
-                 current = false,
-                 vlag = vlag
-             };
-    
-             <partial name="_product" model="@prod"/>
+             product.vlag = vlag;
+             <partial name="_product" model="@product"/>
          }
      }
 }
-
+@*
 <h3>Current Time: @DateTime.Now.TimeOfDay.ToString()</h3>
 <h3>Cached Time: @(ViewBag.Cache == null ? "No cached entry found" : ViewBag.Cache.ToString("HH:mm:ss tt zz"))</h3>
-
+*@

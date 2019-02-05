@@ -35,6 +35,7 @@ namespace ODT.Controllers
       List<Vlag> vlaggen = repo.ReadVlaggen().ToList();
       
       // Caching
+      /*
       var cacheEntry = _cache.GetOrCreate(CacheKeys.Entry, entry =>
       {
         entry.SlidingExpiration = TimeSpan.FromDays(5);
@@ -42,7 +43,7 @@ namespace ODT.Controllers
       });
 
       ViewBag.Cache = cacheEntry;
-    
+    */
       return View(vlaggen);
     }
   }
