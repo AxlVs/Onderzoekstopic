@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Microsoft.AspNetCore.Mvc.Localization
 @model List<Vlag>
 
@@ -20,11 +21,26 @@
 
 @foreach (Vlag vlag in @Model)
 {
-    <div class="product">
-        <img src="@vlag.Afbeelding" alt="@vlag.Beschrijving"/>
-        <h1>@Localizer[@vlag.Naam]</h1>
-        <h2>@Localizer[@String.Format("{0:C}", vlag.Prijs)]</h2>
-    </div>
+    if (vlag.LandCode.Equals(CultureInfo.CurrentCulture.ToString()))
+    {
+        <div class="product current">
+            <img src="@vlag.Afbeelding" alt="@vlag.Beschrijving"/>
+            <h1>@Localizer[@vlag.Naam]</h1>
+            <h2>@Localizer[@String.Format("{0:C}", vlag.Prijs)]</h2>
+        </div>
+    }
+}
+
+@foreach (Vlag vlag in @Model)
+{
+    if (!vlag.LandCode.Equals(CultureInfo.CurrentCulture.ToString()))
+    {
+        <div class="product">
+            <img src="@vlag.Afbeelding" alt="@vlag.Beschrijving"/>
+            <h1>@Localizer[@vlag.Naam]</h1>
+            <h2>@Localizer[@String.Format("{0:C}", vlag.Prijs)]</h2>
+        </div>
+    }
 }
 
 
