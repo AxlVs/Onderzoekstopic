@@ -71,10 +71,7 @@
             <e p="ShopController.nl.resx" t="Include" />
           </e>
           <e p="Views" t="Include">
-            <e p="Home" t="Include">
-              <e p="Index.Designer.cs" t="Include" />
-              <e p="Index.resx" t="Include" />
-            </e>
+            <e p="Home" t="Include" />
             <e p="Shop" t="Include">
               <e p="Index.en.Designer.cs" t="Include" />
               <e p="Index.en.resx" t="Include" />
