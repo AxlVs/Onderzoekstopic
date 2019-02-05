@@ -38,6 +38,7 @@
       </e>
       <e p="Domain" t="IncludeRecursive">
         <e p="Bin" t="ExcludeRecursive" />
+        <e p="CacheKeys.cs" t="Include" />
         <e p="Domain.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -46,6 +47,7 @@
             </e>
           </e>
         </e>
+        <e p="Product.cs" t="Include" />
         <e p="Vlag.cs" t="Include" />
       </e>
       <e p="ODT" t="IncludeRecursive">
@@ -100,6 +102,7 @@
           <e p="Shared" t="Include">
             <e p="_CookieConsentPartial.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
+            <e p="_product.cshtml" t="Include" />
             <e p="_SelectLanguage.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />

@@ -3,7 +3,7 @@
     width: 27%;
     margin: 15px 2.5%;
     border: solid 1px #f2f2f2;
-    height: 450px;
+    height: 300px;
 }
 
 .product img{
@@ -11,6 +11,5 @@
 }
 
 .current{
-    border: solid 1px green;
-    box-shadow: 6px 8px 16px rgba(0,0,0,0.5);
+    box-shadow: 6px 8px 18px rgba(0,0,0,0.3);
 }

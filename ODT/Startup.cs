@@ -64,6 +64,7 @@ namespace ODT
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+      // caching
       services.AddMemoryCache();
     }
 
