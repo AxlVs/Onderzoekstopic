@@ -108,6 +108,7 @@
             <e p="Index.cshtml" t="Include" />
           </e>
         </e>
+        <e p="Vlaggen_DB.db" t="Include" />
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
             <e p="site.css" t="Include" />

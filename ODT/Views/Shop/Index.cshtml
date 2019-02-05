@@ -1,5 +1,5 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model object
+@model List<Vlag>
 
 @inject IViewLocalizer Localizer
 
@@ -11,3 +11,14 @@
 
 <h2>@ViewData["controllerTitle"]</h2>
 <p>@ViewData["viewTitle"]</p>
+
+
+@foreach (Vlag vlag in @Model)
+{
+    <div>
+        <h1>@vlag.Naam</h1>
+    </div>
+}
+
+
+
