@@ -25,6 +25,8 @@ namespace ODT.Controllers
       
       // return data
       List<Vlag> vlaggen = repo.ReadVlaggen().ToList();
+
+      ViewBag.counter = 0;
       
       return View(vlaggen);
     }

@@ -111,6 +111,8 @@
         <e p="Vlaggen_DB.db" t="Include" />
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
+            <e p="custom.css" t="Include" />
+            <e p="custom_home.css" t="Include" />
             <e p="site.css" t="Include" />
             <e p="site.min.css" t="Include" />
           </e>

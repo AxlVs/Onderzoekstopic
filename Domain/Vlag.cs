@@ -9,5 +9,6 @@ namespace ODT.Models
     public String LandCode { get; set; }
     public double Prijs { get; set; }
     public String Beschrijving { get; set; }
+    public String Afbeelding { get; set; }
   }
 }
