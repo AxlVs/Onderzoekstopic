@@ -1,6 +1,6 @@
 using System;
 
-namespace ODT.Models
+namespace Domain
 {
   public class Vlag
   {

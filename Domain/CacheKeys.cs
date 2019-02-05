@@ -1,6 +1,6 @@
 
 
-namespace ODT.Models
+namespace Domain
 {
   public static class CacheKeys
   {

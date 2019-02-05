@@ -1,4 +1,6 @@
-namespace ODT.Models
+using ODT.Models;
+
+namespace Domain
 {
   public class Product
   {
