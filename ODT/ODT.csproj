@@ -7,22 +7,23 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.App" />
         <PackageReference Include="Microsoft.EntityFrameworkCore">
-          <Version>2.1.4</Version>
+            <Version>2.1.4</Version>
         </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
-          <Version>2.1.4</Version>
+            <Version>2.1.4</Version>
         </PackageReference>
         <PackageReference Include="Microsoft.Extensions.Caching.Memory">
-          <Version>2.1.1</Version>
+            <Version>2.1.1</Version>
         </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resources\Views\Home" />
+        <Folder Include="Resources\Views\Home" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BL\BL.csproj" />
+        <ProjectReference Include="..\BL\BL.csproj" />
+        <ProjectReference Include="..\Domain\Domain.csproj" />
     </ItemGroup>
 
 </Project>

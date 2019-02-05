@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Axl\.Rider2018.2\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\Axl\.Rider2018.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\Axl\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Axl\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Onderzoekstopic.-2130294640.00" t="ExcludeRecursive" />
-    <e p="D:\KDG\18 - 19\Onderzoekstoppics\Onderzoekstopic" t="IncludeFlat">
+    <e p="C:\Users\Buem\.Rider2018.2\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Buem\.Rider2018.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Buem\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Buem\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Onderzoekstopic.-1009588242.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Buem\Documents\School_18-19\Periode_3\NET_2\Project_Onderzoekstopics" t="IncludeFlat">
       <e p="BL" t="IncludeRecursive">
         <e p="Bin" t="ExcludeRecursive" />
         <e p="BL.csproj" t="IncludeRecursive" />
@@ -75,8 +75,11 @@
         </e>
         <e p="Resources" t="Include">
           <e p="Controllers" t="Include">
+            <e p="HomeController.nl.Designer.cs" t="Include" />
             <e p="HomeController.nl.resx" t="Include" />
+            <e p="ShopController.en.Designer.cs" t="Include" />
             <e p="ShopController.en.resx" t="Include" />
+            <e p="ShopController.fr.Designer.cs" t="Include" />
             <e p="ShopController.fr.resx" t="Include" />
             <e p="ShopController.nl.resx" t="Include" />
           </e>
@@ -87,6 +90,7 @@
               <e p="_SelectLanguage.nl.resx" t="Include" />
             </e>
             <e p="Shop" t="Include">
+              <e p="Index.en.Designer.cs" t="Include" />
               <e p="Index.en.resx" t="Include" />
               <e p="Index.fr.resx" t="Include" />
               <e p="Index.nl.resx" t="Include" />
