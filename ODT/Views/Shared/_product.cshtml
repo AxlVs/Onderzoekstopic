@@ -1,13 +1,10 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@model Product
+@model Domain.Product
 
 @inject IViewLocalizer Localizer
 
-
-<cache expires-after="@TimeSpan.FromSeconds(120)" >
 <div class="product @(Model.current ? "current" : "")">
     <img src="@Model.vlag.Afbeelding" alt="@Model.vlag.Beschrijving"/>
     <h1>@Localizer[@Model.vlag.Naam]</h1>
     <h2>@Localizer[@String.Format("{0:C}", Model.vlag.Prijs)]</h2>
 </div>
-</cache>

@@ -1,4 +1,4 @@
-using ODT.Models;
+using Domain;
 
 namespace DAL.EF
 {

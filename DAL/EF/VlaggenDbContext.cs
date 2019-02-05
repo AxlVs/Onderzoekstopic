@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using ODT.Models;
+using Domain;
 
 namespace DAL.EF
 {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using DAL.EF;
-using ODT.Models;
+using Domain;
 
 namespace BL
 {

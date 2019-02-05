@@ -1,5 +1,6 @@
 @using System.Globalization
 @using Microsoft.AspNetCore.Mvc.Localization
+@using Domain
 @model List<Vlag>
 
 @inject IViewLocalizer Localizer
@@ -29,13 +30,16 @@
     
     <partial name="_product" model="@product"/>
 
-    product.current = false;
     foreach (Vlag vlag in @Model)
      {
          if (!vlag.LandCode.Equals(CultureInfo.CurrentCulture.ToString()))
          {
-             product.vlag = vlag;
-             <partial name="_product" model="@product"/>
+             Product prod = new Product()
+             {
+                 current = false,
+                 vlag = vlag
+             };
+             <partial name="_product" model="@prod"/>
          }
      }
 }
