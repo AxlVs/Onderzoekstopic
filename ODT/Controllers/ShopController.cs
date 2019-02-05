@@ -24,9 +24,8 @@ namespace ODT.Controllers
       ViewData["controllerTitle"] = _localizer["winkelTitel"];
       
       // return data
-      List<Vlag> vlaggen = repo.ReadVlaggen().ToList();
-
-      ViewBag.counter = 0;
+      List<Vlag> vlaggen = repo.ReadVlaggen()
+        .ToList();
       
       return View(vlaggen);
     }
