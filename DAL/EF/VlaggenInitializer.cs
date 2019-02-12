@@ -6,7 +6,7 @@ namespace DAL.EF
   {
     private static bool hasRunDuringAppExecution = false;
 
-    public static void Initialize(VlaggenDbContext context, bool dropCreateDatabase)
+    public static void Initialize(VlaggenDbContext context, bool dropCreateDatabase = false)
     {
       if (!hasRunDuringAppExecution)
       {
