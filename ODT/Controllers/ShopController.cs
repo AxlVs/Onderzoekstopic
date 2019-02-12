@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using DAL.EF;
@@ -24,6 +25,7 @@ namespace ODT.Controllers
       _cache = memoryCache;
     }
     
+    [ResponseCache(Duration = 5, VaryByHeader = "ID")]
     public IActionResult Index()
     {
       // return correct language title
@@ -31,18 +33,6 @@ namespace ODT.Controllers
       
       // return data
       List<Vlag> vlaggen = repo.ReadVlaggen().ToList();
-      
-      // Caching
-
-      var trycache = _cache.Get <DateTime?> (CacheKeys.Entry);
-      var cacheEntry = _cache.GetOrCreate(CacheKeys.Entry, entry =>
-      {
-        entry.SlidingExpiration = TimeSpan.FromSeconds(5);
-        return DateTime.Now;
-      });
-
-      ViewBag.tryCache = trycache;
-      ViewBag.Cache = cacheEntry;
     
       return View(vlaggen);
     }

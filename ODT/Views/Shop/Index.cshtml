@@ -22,12 +22,17 @@
 @{
     Vlag v = Model.Find(p => p.LandCode.Equals(CultureInfo.CurrentCulture.ToString()));
     
+    <cache expires-after="@TimeSpan.FromSeconds(5)" vary-by-route="@v.ID">  
     <div class="product current">
         <img src="@v.Afbeelding" alt="@v.Beschrijving"/>
         <h1>@Localizer[@v.Naam]</h1>
         <h2>@Localizer[@String.Format("{0:C}", v.Prijs)]</h2>
+        <p>*last updated  @DateTime.Now.ToLongTimeString()</p>
     </div>
+    </cache>
 
+    
+    @* View Cache *@
     foreach (Vlag vlag in @Model)
      {
          if (!vlag.LandCode.Equals(CultureInfo.CurrentCulture.ToString()))
@@ -44,9 +49,4 @@
      }
 }
 
-@*
-<h3>Current Time: @DateTime.Now.TimeOfDay.ToString()</h3>
-<h3>Tried Time: @(ViewBag.tryCache == null ? "No cached entry found" : ViewBag.tryCache.ToString("HH:mm:ss tt zz"))</h3>
-<h3>Cached Time: @(ViewBag.Cache == null ? "No cached entry found" : ViewBag.Cache.ToString("HH:mm:ss tt zz"))</h3>
-*@
 
