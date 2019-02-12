@@ -134,6 +134,7 @@
             <e p="banner3.svg" t="Include" />
             <e p="vlag" t="Include">
               <e p="belgie.png" t="Include" />
+              <e p="duitsland.png" t="Include" />
               <e p="frankrijk.png" t="Include" />
               <e p="nederland.png" t="Include" />
               <e p="verenigde_staten.png" t="Include" />

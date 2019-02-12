@@ -60,10 +60,21 @@ namespace DAL.EF
         Afbeelding = "images/vlag/verenigde_staten.png"
       };
 
+      Vlag v5 = new Vlag()
+      {
+        ID = 5,
+        Beschrijving = "Vlag van Duitsland",
+        Naam = "Duitsland",
+        LandCode = "de-DE",
+        Prijs = 24.99,
+        Afbeelding = "images/vlag/duitsland.png"
+      };
+      
       context.Vlags.Add(v1);
       context.Vlags.Add(v2);
       context.Vlags.Add(v3);
       context.Vlags.Add(v4);
+      context.Vlags.Add(v5);
 
       context.SaveChanges();
     }
