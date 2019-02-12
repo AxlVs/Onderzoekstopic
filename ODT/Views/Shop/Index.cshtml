@@ -21,29 +21,32 @@
 
 @{
     Vlag v = Model.Find(p => p.LandCode.Equals(CultureInfo.CurrentCulture.ToString()));
-
-    Product product = new Product()
-    {
-        current = true,
-        vlag = v
-    };
     
-    <partial name="_product" model="@product"/>
+    <div class="product current">
+        <img src="@v.Afbeelding" alt="@v.Beschrijving"/>
+        <h1>@Localizer[@v.Naam]</h1>
+        <h2>@Localizer[@String.Format("{0:C}", v.Prijs)]</h2>
+    </div>
 
     foreach (Vlag vlag in @Model)
      {
          if (!vlag.LandCode.Equals(CultureInfo.CurrentCulture.ToString()))
-         {
-             Product prod = new Product()
-             {
-                 current = false,
-                 vlag = vlag
-             };
-             <partial name="_product" model="@prod"/>
+         {          
+             <cache expires-after="@TimeSpan.FromSeconds(5)" vary-by-route="@vlag.ID">         
+                 <div class="product">
+                     <img src="@vlag.Afbeelding" alt="@vlag.Beschrijving"/>
+                     <h1>@Localizer[@vlag.Naam]</h1>
+                     <h2>@Localizer[@String.Format("{0:C}", vlag.Prijs)]</h2>
+                     <p>*last updated  @DateTime.Now.ToLongTimeString()</p>
+                 </div>
+             </cache>
          }
      }
 }
+
 @*
 <h3>Current Time: @DateTime.Now.TimeOfDay.ToString()</h3>
+<h3>Tried Time: @(ViewBag.tryCache == null ? "No cached entry found" : ViewBag.tryCache.ToString("HH:mm:ss tt zz"))</h3>
 <h3>Cached Time: @(ViewBag.Cache == null ? "No cached entry found" : ViewBag.Cache.ToString("HH:mm:ss tt zz"))</h3>
 *@
+

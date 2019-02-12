@@ -26,7 +26,7 @@ namespace ODT.Controllers
       _localizer = localizer;
       _cache = memoryCache;
     }
-
+    
     public IActionResult Index()
     {
       // return correct language title
@@ -36,15 +36,17 @@ namespace ODT.Controllers
       List<Vlag> vlaggen = repo.ReadVlaggen().ToList();
       
       // Caching
-      /*
+
+      var trycache = _cache.Get <DateTime?> (CacheKeys.Entry);
       var cacheEntry = _cache.GetOrCreate(CacheKeys.Entry, entry =>
       {
-        entry.SlidingExpiration = TimeSpan.FromDays(5);
+        entry.SlidingExpiration = TimeSpan.FromSeconds(5);
         return DateTime.Now;
       });
 
+      ViewBag.tryCache = trycache;
       ViewBag.Cache = cacheEntry;
-    */
+    
       return View(vlaggen);
     }
   }
