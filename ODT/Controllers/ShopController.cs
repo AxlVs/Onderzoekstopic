@@ -25,7 +25,7 @@ namespace ODT.Controllers
       _cache = memoryCache;
     }
     
-    [ResponseCache(Duration = 5, VaryByHeader = "ID")]
+    [ResponseCache(Duration = 60)]
     public IActionResult Index()
     {
       // return correct language title

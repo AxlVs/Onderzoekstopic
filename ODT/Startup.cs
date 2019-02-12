@@ -39,6 +39,9 @@ namespace ODT
       // Toevoegen localisation services aan de applicatie
       services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
 
+      // Toevoegen van ResponseCaching
+      services.AddResponseCaching();
+      
       services.AddMvc()
         .AddViewLocalization(
           LanguageViewLocationExpanderFormat.Suffix,
@@ -61,11 +64,6 @@ namespace ODT
           opts.SupportedCultures = supportedCultures;
           opts.SupportedUICultures = supportedCultures;
         });
-
-      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-      // caching
-      services.AddResponseCaching();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -89,14 +87,10 @@ namespace ODT
       var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
       app.UseRequestLocalization(options.Value);
       
-      app.UseMvc(routes =>
-      {
-        routes.MapRoute(
-          name: "default",
-          template: "{controller=Home}/{action=Index}/{id?}");
-      });
-
+      // Toevoeging van Responsecaching
       app.UseResponseCaching();
+      
+      app.UseMvcWithDefaultRoute();
     }
   }
 }
