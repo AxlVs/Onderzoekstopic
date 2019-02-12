@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\ODT\\ODT.csproj",
+    "projectUniqueName": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\ODT\\ODT.csproj",
     "projectName": "ODT",
-    "projectPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\ODT\\ODT.csproj",
-    "outputPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\ODT\\obj\\",
+    "projectPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\ODT\\ODT.csproj",
+    "outputPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\ODT\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -15,11 +15,11 @@
     "frameworks": {
       "netcoreapp2.1": {
         "projectReferences": {
-          "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\BL\\BL.csproj": {
-            "projectPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\BL\\BL.csproj"
+          "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\BL\\BL.csproj": {
+            "projectPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\BL\\BL.csproj"
           },
-          "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\Domain\\Domain.csproj": {
-            "projectPath": "C:\\Users\\Buem\\Documents\\School_18-19\\Periode_3\\NET_2\\Project_Onderzoekstopics\\Domain\\Domain.csproj"
+          "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\Domain\\Domain.csproj": {
+            "projectPath": "D:\\KDG\\18 - 19\\Onderzoekstoppics\\Onderzoekstopic\\Domain\\Domain.csproj"
           }
         }
       }
