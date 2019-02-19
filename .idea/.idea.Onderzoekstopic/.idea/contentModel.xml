@@ -40,9 +40,6 @@
         <e p="Bin" t="ExcludeRecursive" />
         <e p="CacheKeys.cs" t="Include" />
         <e p="Domain.csproj" t="IncludeRecursive" />
-        <e p="extensions" t="Include">
-          <e p="Serialization.cs" t="Include" />
-        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.1" t="Include">
@@ -78,8 +75,6 @@
         </e>
         <e p="Resources" t="Include">
           <e p="Controllers" t="Include">
-            <e p="HomeController.nl.Designer.cs" t="Include" />
-            <e p="HomeController.nl.resx" t="Include" />
             <e p="ShopController.en.Designer.cs" t="Include" />
             <e p="ShopController.en.resx" t="Include" />
             <e p="ShopController.fr.Designer.cs" t="Include" />

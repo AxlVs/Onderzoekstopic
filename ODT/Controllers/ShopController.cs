@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.EF;
 using Domain;
-using Domain.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
@@ -34,29 +33,34 @@ namespace ODT.Controllers
     }
     
     public async Task<IActionResult> Index()
-    {
-      const string key = "cachedTime";
-      const string message = "hello";
-
-      await _distributedCache.SetStringAsync(key, message);
-      var cachedMessage = await _distributedCache.GetStringAsync(key);
-
-      ViewBag.distributedCacheValue = cachedMessage;
-      
-      // return correct language title
+    { 
+      // De titel via de controller meegeven, gebruik makend van de localizer
+      //  --> Zorgt ervoor dat naar een vertaling wordt gezocht in de resource file van de controller ipv de view
       ViewData["controllerTitle"] = _localizer["winkelTitel"];
-      
-      // return data
-//      List<Vlag> vlaggen = repo.ReadVlaggen().ToList();
 
       ViewBag.cacheTime = DateTime.Now.ToLongTimeString();
       
-      // Test json
-      if (_distributedCache.GetAsync("vlaggenJson") == null)
+      // Distributed Caching met Redis
+      var cachedData = _distributedCache.GetString("vlaggenJson");
+      List<Vlag> vlaggen;
+      
+      if (string.IsNullOrEmpty(cachedData))
       {
-        List<Vlag> vlaggen = repo.ReadVlaggen().ToList();
-        String json = JsonConvert.SerializeObject(vlaggen);
-        //TODO Wegschrijven
+        vlaggen = repo.ReadVlaggen().ToList();
+        
+        string json = JsonConvert.SerializeObject(vlaggen);
+        
+        var options = new DistributedCacheEntryOptions()
+          .SetSlidingExpiration(TimeSpan.FromSeconds(15));
+        //Kan ook met 'DistributedCacheEntryOptions.SetAbsoluteExpiration(...)'
+        // Absolute: Timer blijft aftellen, ookal refresh je
+        // Sliding: Timer begint bij begin als je refresht
+        
+        _distributedCache.SetString("vlaggenJson", json, options);
+      }
+      else
+      {
+        vlaggen = JsonConvert.DeserializeObject<List<Vlag>>(cachedData);
       }
       
       return View(vlaggen);

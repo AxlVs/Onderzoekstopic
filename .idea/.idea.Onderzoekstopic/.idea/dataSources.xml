@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Vlaggen_DB" uuid="8093e66c-b4f1-4be2-9133-af11a6a45be7">
+    <data-source source="LOCAL" name="Vlaggen_DB" uuid="316eb830-a9c6-43f1-bfb1-7c8118edb2d6">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\KDG\18 - 19\Onderzoekstoppics\Onderzoekstopic\ODT\Vlaggen_DB.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Buem\Documents\School_18-19\Periode_3\NET_2\Project_Onderzoekstopics\ODT\Vlaggen_DB.db</jdbc-url>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>
