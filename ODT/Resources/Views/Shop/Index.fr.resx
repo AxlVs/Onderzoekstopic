@@ -4,6 +4,7 @@
     <data name="winkelDescription">
         <value>Magasin des drapeaux European descriptif</value>
     </data>
+    <!--
     <data name="Language:">
         <value>Langue:</value>
     </data>
@@ -19,4 +20,5 @@
     <data name="Verenigde Staten">
         <value>Etats Unis</value>
     </data>
+    -->
 </root>

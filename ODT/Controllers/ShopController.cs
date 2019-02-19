@@ -4,11 +4,14 @@ using System.Linq;
 using DAL.EF;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Localization;
 
 namespace ODT.Controllers
 {
+  
+  [ResponseCache(Duration = 60)]
   public class ShopController : Controller
   {
     private VlaggenRepository repo = new VlaggenRepository();
@@ -17,15 +20,15 @@ namespace ODT.Controllers
     private readonly IStringLocalizer<ShopController> _localizer;
     
     // caching
-    private IMemoryCache _cache;
-
-    public ShopController(IStringLocalizer<ShopController> localizer, IMemoryCache memoryCache)
+    //private IMemoryCache _cache;
+    //private IDistributedCache _cache;
+    
+    public ShopController(IStringLocalizer<ShopController> localizer, IDistributedCache memoryCache)
     {
       _localizer = localizer;
-      _cache = memoryCache;
+      //_cache = memoryCache;
     }
     
-    [ResponseCache(Duration = 5, VaryByHeader = "ID")]
     public IActionResult Index()
     {
       // return correct language title
@@ -33,7 +36,9 @@ namespace ODT.Controllers
       
       // return data
       List<Vlag> vlaggen = repo.ReadVlaggen().ToList();
-    
+
+      ViewBag.cacheTime = DateTime.Now.ToLongTimeString();
+     
       return View(vlaggen);
     }
   }

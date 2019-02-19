@@ -4,4 +4,7 @@
     <data name="Language:">
         <value>Langue:</value>
     </data>
+    <data name="Save">
+        <value>Sauvegarder</value>
+    </data>
 </root>

@@ -10,6 +10,7 @@ using ODT.Models;
 
 namespace ODT.Controllers
 {
+  //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
   public class HomeController : Controller
   {
     public IActionResult Index()
@@ -43,6 +44,7 @@ namespace ODT.Controllers
     }
     
     [HttpPost]
+    //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult SetLanguage(string culture, string returnUrl)
     {
       Response.Cookies.Append(

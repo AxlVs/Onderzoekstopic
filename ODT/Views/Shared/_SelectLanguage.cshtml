@@ -15,10 +15,12 @@
 <div title="@Localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name">
     <form id="selectLanguage" asp-controller="Home"
           asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path"
-          method="post" class="form-horizontal" role="form">
-        @Localizer["Language:"] <select name="culture"
+          method="post" class="form-horizontal" role="form"
+          asp-antiforgery="false">
+        @Localizer["Language:"] <select class="dropdown"
+                                        name="culture"
                                         asp-for="@requestCulture.RequestCulture.UICulture.Name"
                                         asp-items="cultureItems"></select>
-        <button type="submit" class="btn btn-default btn-xs">Save</button>
+            <button type="submit" class="btn btn-default btn-xs">@Localizer["Save"]</button>
     </form>
 </div>

@@ -4,6 +4,7 @@
     <data name="winkelDescription">
         <value>English flag store description</value>
     </data>
+    <!--
     <data name="Belgie">
         <value>Belgium</value>
     </data>
@@ -16,4 +17,5 @@
     <data name="Verenigde Staten">
         <value>United States</value>
     </data>
+    -->
 </root>

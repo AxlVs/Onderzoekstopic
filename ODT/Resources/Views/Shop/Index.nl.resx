@@ -4,6 +4,7 @@
     <data name="winkelDescription">
         <value>Belgische vlaggen winkel beschrijving</value>
     </data>
+    <!--
     <data name="Belgie">
         <value>België</value>
     </data>
@@ -16,4 +17,5 @@
     <data name="Nederland">
         <value>Kaashoofd</value>
     </data>
+    -->
 </root>

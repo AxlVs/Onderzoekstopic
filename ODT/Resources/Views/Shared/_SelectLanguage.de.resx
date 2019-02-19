@@ -2,9 +2,9 @@
 
 <root>
     <data name="Language:">
-        <value>Taal:</value>
+        <value>Sprache:</value>
     </data>
     <data name="Save">
-        <value>Opslaan</value>
+        <value>Speichern</value>
     </data>
 </root>
