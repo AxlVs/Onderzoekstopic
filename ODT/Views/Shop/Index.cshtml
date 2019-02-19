@@ -21,6 +21,7 @@
 
 @{
     Vlag v = Model.Find(p => p.LandCode.Equals(CultureInfo.CurrentCulture.ToString()));
+    Console.WriteLine(CultureInfo.CurrentCulture.ToString());
     
     @*<cache expires-after="@TimeSpan.FromSeconds(5)" vary-by-route="@v.ID">*@
     <div class="product current">
