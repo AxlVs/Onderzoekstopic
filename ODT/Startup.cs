@@ -58,6 +58,8 @@ namespace ODT
 
       
       services.AddResponseCaching();
+
+      services.AddDistributedRedisCache(options => { options.Configuration = "localhost:6379"; });
       
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
       
