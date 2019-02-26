@@ -57,12 +57,33 @@ namespace ODT
         });
 
       
-      services.AddResponseCaching();
+      services.AddResponseCaching(options =>
+      {
+        options.UseCaseSensitivePaths = true;
+        options.MaximumBodySize = 2048;
+        options.SizeLimit = 10240;
+      });
 
       services.AddDistributedRedisCache(options => 
         { options.Configuration = "localhost:6379"; });
       
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+      
+      // CacheProfiles toevoegen
+      services.AddMvc(options =>
+      {
+        options.CacheProfiles.Add("DefaultProfile",
+          new CacheProfile()
+          {
+            Duration = 60
+          });
+        options.CacheProfiles.Add("NeverProfile",
+          new CacheProfile()
+          {
+            Location = ResponseCacheLocation.None,
+            NoStore = true
+          });
+      });
       
       services.AddMvc()
         .AddViewLocalization(
@@ -94,6 +115,7 @@ namespace ODT
       app.UseRequestLocalization(options.Value);
 
       // response caching
+      
       app.UseResponseCaching();
 
       app.UseMvcWithDefaultRoute();

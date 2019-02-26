@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 namespace ODT.Controllers
 {
   
-//  [ResponseCache(Duration = 60)]
+  [ResponseCache(CacheProfileName = "DefaultProfile")]
   public class ShopController : Controller
   {
     private VlaggenRepository repo = new VlaggenRepository();
@@ -42,23 +42,18 @@ namespace ODT.Controllers
       ViewBag.cacheTime = DateTime.Now.ToLongTimeString();
       
       // Distributed Caching met Redis
-      var cachedData = _distributedCache.GetString("vlaggenJson");
+      var cachedData = await _distributedCache.GetStringAsync("vlaggenJson");
       List<Vlag> vlaggen;
       
       if (string.IsNullOrEmpty(cachedData))
       {
         vlaggen = repo.ReadVlaggen().ToList();
-        
         string json = JsonConvert.SerializeObject(vlaggen);
 
         var options = new DistributedCacheEntryOptions()
-          //.SetSlidingExpiration(TimeSpan.FromSeconds(15));
           .SetAbsoluteExpiration(TimeSpan.FromMinutes(2));
-        //Kan ook met 'DistributedCacheEntryOptions.SetAbsoluteExpiration(...)'
-        // Absolute: Timer blijft aftellen, ookal refresh je
-        // Sliding: Timer begint bij begin als je refresht
         
-        _distributedCache.SetString("vlaggenJson", json, options);
+        await _distributedCache.SetStringAsync("vlaggenJson", json, options);
       }
       else
       {
