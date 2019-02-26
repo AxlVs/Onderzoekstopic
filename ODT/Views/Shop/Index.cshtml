@@ -26,8 +26,8 @@
     @*<cache expires-after="@TimeSpan.FromSeconds(5)" vary-by-route="@v.ID">*@
     <div class="product current">
         <img src="@v.Afbeelding" alt="@v.Beschrijving"/>
-        <h1>@Localizer[@v.Naam]</h1>
-        <h2>@Localizer[@String.Format("{0:C}", v.Prijs)]</h2>
+        <h1>@v.Naam</h1>
+        <h2>@String.Format("{0:C}", v.Prijs)</h2>
         <p>*last updated  @ViewBag.cacheTime</p>
     </div>
     @*</cache>*@
@@ -38,14 +38,14 @@
      {
          if (!vlag.LandCode.Equals(CultureInfo.CurrentCulture.ToString()))
          {          
-             @*<cache expires-after="@TimeSpan.FromSeconds(5)" vary-by-route="@vlag.ID, @CultureInfo.CurrentCulture.ToString()">*@    
+             <cache expires-after="@TimeSpan.FromSeconds(10)" vary-by-route="@vlag.ID, @CultureInfo.CurrentCulture.ToString()">    
                  <div class="product">
                      <img src="@vlag.Afbeelding" alt="@vlag.Beschrijving"/>
                      <h1>@vlag.Naam</h1>
                      <h2>@String.Format("{0:C}", vlag.Prijs)</h2>
                      <p>*last updated  @ViewBag.cacheTime</p>
                  </div>
-             @*</cache>*@
+             </cache>
          }
      }
 }

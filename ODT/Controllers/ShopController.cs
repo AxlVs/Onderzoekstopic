@@ -26,7 +26,8 @@ namespace ODT.Controllers
     //private IMemoryCache _cache;
     private IDistributedCache _distributedCache;
     
-    public ShopController(IStringLocalizer<ShopController> localizer, IDistributedCache memoryCache)
+    public ShopController(IStringLocalizer<ShopController> localizer,
+      IDistributedCache memoryCache)
     {
       _localizer = localizer;
       _distributedCache = memoryCache;
@@ -49,9 +50,10 @@ namespace ODT.Controllers
         vlaggen = repo.ReadVlaggen().ToList();
         
         string json = JsonConvert.SerializeObject(vlaggen);
-        
+
         var options = new DistributedCacheEntryOptions()
-          .SetSlidingExpiration(TimeSpan.FromSeconds(15));
+          //.SetSlidingExpiration(TimeSpan.FromSeconds(15));
+          .SetAbsoluteExpiration(TimeSpan.FromMinutes(2));
         //Kan ook met 'DistributedCacheEntryOptions.SetAbsoluteExpiration(...)'
         // Absolute: Timer blijft aftellen, ookal refresh je
         // Sliding: Timer begint bij begin als je refresht
