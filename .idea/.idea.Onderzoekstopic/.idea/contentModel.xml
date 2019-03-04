@@ -115,6 +115,7 @@
             <e p="Error.cshtml" t="Include" />
           </e>
           <e p="Shop" t="Include">
+            <e p="Flag.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
         </e>

@@ -31,21 +31,21 @@
         <p>*last updated  @ViewBag.cacheTime</p>
     </div>
     @*</cache>*@
-
     
     @* View Caching *@
     foreach (Vlag vlag in @Model)
      {
          if (!vlag.LandCode.Equals(CultureInfo.CurrentCulture.ToString()))
          {          
-             <cache expires-after="@TimeSpan.FromSeconds(10)" vary-by-route="@vlag.ID, @CultureInfo.CurrentCulture.ToString()">    
+@*              <cache expires-after="@TimeSpan.FromSeconds(10)" vary-by-route="@vlag.ID, @CultureInfo.CurrentCulture.ToString()">     *@
                  <div class="product">
                      <img src="@vlag.Afbeelding" alt="@vlag.Beschrijving"/>
                      <h1>@vlag.Naam</h1>
                      <h2>@String.Format("{0:C}", vlag.Prijs)</h2>
-                     <p>*last updated  @ViewBag.cacheTime</p>
+                     <p>*last updated (View Caching / Response Caching) @ViewBag.cacheTime</p>
+                     <p>*last updated (In-Memory Cache) @ViewBag.memoryCacheTime</p>
                  </div>
-             </cache>
+             @* </cache> *@
          }
      }
 }

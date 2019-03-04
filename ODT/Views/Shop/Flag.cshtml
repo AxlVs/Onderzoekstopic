@@ -1,0 +1,25 @@
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@model Domain.Vlag
+
+@section Style
+{
+    <link rel="stylesheet" href="css/custom.css"/>
+}
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>@ViewData["controllerTitle"]</h2>
+
+@{
+    Console.WriteLine(CultureInfo.CurrentCulture.ToString());
+
+    <div class="product current">
+        <img src="@Model.Afbeelding" alt="@Model.Beschrijving"/>
+        <h1>@Model.Naam</h1>
+        <h2>@String.Format("{0:C}", Model.Prijs)</h2>
+        <p>*last updated  @ViewBag.cacheTime</p>
+    </div>
+}

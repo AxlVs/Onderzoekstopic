@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using DAL.EF;
 using Domain;
@@ -14,7 +13,6 @@ using Newtonsoft.Json;
 namespace ODT.Controllers
 {
   
-  [ResponseCache(CacheProfileName = "DefaultProfile")]
   public class ShopController : Controller
   {
     private VlaggenRepository repo = new VlaggenRepository();
@@ -26,13 +24,17 @@ namespace ODT.Controllers
     //private IMemoryCache _cache;
     private IDistributedCache _distributedCache;
     
+    private IMemoryCache _memoryCache;
+    
     public ShopController(IStringLocalizer<ShopController> localizer,
-      IDistributedCache memoryCache)
+      IDistributedCache distributedCache, IMemoryCache memoryCache)
     {
       _localizer = localizer;
-      _distributedCache = memoryCache;
+      _distributedCache = distributedCache;
+      _memoryCache = memoryCache;
     }
     
+//    [ResponseCache(CacheProfileName = "DefaultProfile")]
     public async Task<IActionResult> Index()
     { 
       // De titel via de controller meegeven, gebruik makend van de localizer
@@ -40,6 +42,21 @@ namespace ODT.Controllers
       ViewData["controllerTitle"] = _localizer["winkelTitel"];
 
       ViewBag.cacheTime = DateTime.Now.ToLongTimeString();
+      
+      // In-Memory Caching
+      DateTime currentTime;
+      
+      bool isExist = _memoryCache.TryGetValue("CacheTime", out currentTime);  
+      if (!isExist)  
+      {
+        currentTime = DateTime.Now;                  
+        var cacheEntryOptions = new MemoryCacheEntryOptions()  
+          .SetSlidingExpiration(TimeSpan.FromSeconds(30));  
+  
+        _memoryCache.Set("CacheTime", currentTime, cacheEntryOptions);
+      }
+
+      ViewBag.memoryCacheTime = currentTime;
       
       // Distributed Caching met Redis
       var cachedData = await _distributedCache.GetStringAsync("vlaggenJson");
@@ -61,6 +78,17 @@ namespace ODT.Controllers
       }
       
       return View(vlaggen);
+    }
+
+    [Route("Flag")]
+    [ResponseCache(CacheProfileName = "DefaultProfile", VaryByQueryKeys = new[] {"id"})]
+    public IActionResult Flag(int id)
+    {
+      ViewData["controllerTitle"] = _localizer["winkelTitel"];
+      ViewBag.cacheTime = DateTime.Now.ToLongTimeString();
+      
+      Vlag v = repo.ReadVlag(id);
+      return View(v);
     }
   }
 }

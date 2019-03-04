@@ -57,12 +57,9 @@ namespace ODT
         });
 
       
-      services.AddResponseCaching(options =>
-      {
-        options.UseCaseSensitivePaths = true;
-        options.MaximumBodySize = 2048;
-        options.SizeLimit = 10240;
-      });
+      services.AddResponseCaching();
+
+      services.AddMemoryCache();
 
       services.AddDistributedRedisCache(options => 
         { options.Configuration = "localhost:6379"; });
@@ -115,7 +112,6 @@ namespace ODT
       app.UseRequestLocalization(options.Value);
 
       // response caching
-      
       app.UseResponseCaching();
 
       app.UseMvcWithDefaultRoute();
