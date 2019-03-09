@@ -8,7 +8,7 @@ namespace BL
   {
     private VlaggenRepository repo;
 
-    public VlaggenManager(VlaggenRepository repo)
+    public VlaggenManager()
     {
       this.repo = new VlaggenRepository();
     }

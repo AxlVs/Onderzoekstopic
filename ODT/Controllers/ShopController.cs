@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BL;
 using DAL.EF;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +16,7 @@ namespace ODT.Controllers
   
   public class ShopController : Controller
   {
-    private VlaggenRepository repo = new VlaggenRepository();
+    private IVlaggenManager mgr = new VlaggenManager();
     
     // localization
     private readonly IStringLocalizer<ShopController> _localizer;
@@ -51,8 +52,8 @@ namespace ODT.Controllers
       {
         currentTime = DateTime.Now;                  
         var cacheEntryOptions = new MemoryCacheEntryOptions()  
-          .SetSlidingExpiration(TimeSpan.FromSeconds(30));  
-  
+          .SetSlidingExpiration(TimeSpan.FromSeconds(30));
+
         _memoryCache.Set("CacheTime", currentTime, cacheEntryOptions);
       }
 
@@ -64,7 +65,7 @@ namespace ODT.Controllers
       
       if (string.IsNullOrEmpty(cachedData))
       {
-        vlaggen = repo.ReadVlaggen().ToList();
+        vlaggen = mgr.GetVlaggen().ToList();
         string json = JsonConvert.SerializeObject(vlaggen);
 
         var options = new DistributedCacheEntryOptions()
@@ -87,7 +88,7 @@ namespace ODT.Controllers
       ViewData["controllerTitle"] = _localizer["winkelTitel"];
       ViewBag.cacheTime = DateTime.Now.ToLongTimeString();
       
-      Vlag v = repo.ReadVlag(id);
+      Vlag v = mgr.GetVlag(id);
       return View(v);
     }
   }

@@ -29,6 +29,7 @@
         <h1>@v.Naam</h1>
         <h2>@String.Format("{0:C}", v.Prijs)</h2>
         <p>*last updated  @ViewBag.cacheTime</p>
+        <p>*last updated (In-Memory Cache) @ViewBag.memoryCacheTime</p>
     </div>
     @*</cache>*@
     
@@ -42,7 +43,7 @@
                      <img src="@vlag.Afbeelding" alt="@vlag.Beschrijving"/>
                      <h1>@vlag.Naam</h1>
                      <h2>@String.Format("{0:C}", vlag.Prijs)</h2>
-                     <p>*last updated (View Caching / Response Caching) @ViewBag.cacheTime</p>
+                     <p>*last updated (Response Caching) @ViewBag.cacheTime</p>
                      <p>*last updated (In-Memory Cache) @ViewBag.memoryCacheTime</p>
                  </div>
              @* </cache> *@
