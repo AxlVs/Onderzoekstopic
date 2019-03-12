@@ -61,6 +61,8 @@ namespace ODT
 
       services.AddMemoryCache();
 
+      services.AddRouting();
+
       services.AddDistributedRedisCache(options => 
         { options.Configuration = "localhost:6379"; });
       
@@ -114,15 +116,15 @@ namespace ODT
       // response caching
       app.UseResponseCaching();
 
-      app.UseMvcWithDefaultRoute();
+      
       // end response caching
       
-      /*app.UseMvc(routes =>
+      app.UseMvc(routes =>
       {
         routes.MapRoute(
           name: "default",
-          template: "{controller=Home}/{action=Index}/{id?}");
-      });*/
+          template: "{controller=Shop}/{action=Index}/{id?}");
+      });
     }
   }
 }

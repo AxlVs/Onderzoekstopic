@@ -14,7 +14,7 @@ namespace DAL.EF
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      optionsBuilder.UseSqlite("Data Source=Vlaggen_DB.db");
+      optionsBuilder.UseSqlite("Data Source=Vlaggen_distr_DB.db;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
