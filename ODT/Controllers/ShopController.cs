@@ -116,7 +116,7 @@ namespace ODT.Controllers
       {
         image.CopyTo(new FileStream("wwwroot/images/vlag/" + image.FileName, FileMode.Create));
 
-        toAddVlag.Afbeelding = image.FileName;
+        toAddVlag.Afbeelding = "/images/vlag/" + image.FileName;
       }
 
       mgr.AddVlag(toAddVlag);
