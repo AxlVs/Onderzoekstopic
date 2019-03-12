@@ -84,6 +84,9 @@
           <e p="Views" t="Include">
             <e p="Home" t="Include" />
             <e p="Shared" t="Include">
+              <e p="_Layout.de.resx" t="Include" />
+              <e p="_Layout.en.resx" t="Include" />
+              <e p="_Layout.fr.resx" t="Include" />
               <e p="_SelectLanguage.de.resx" t="Include" />
               <e p="_SelectLanguage.fr.resx" t="Include" />
               <e p="_SelectLanguage.nl.resx" t="Include" />

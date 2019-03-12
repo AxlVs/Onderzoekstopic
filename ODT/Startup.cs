@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 
 namespace ODT
@@ -56,16 +51,17 @@ namespace ODT
           opts.SupportedUICultures = supportedCultures;
         });
 
-      
+
       services.AddResponseCaching();
+
+      services.AddRouting();
 
       services.AddMemoryCache();
 
-      services.AddDistributedRedisCache(options => 
-        { options.Configuration = "localhost:6379"; });
-      
+      services.AddDistributedRedisCache(options => { options.Configuration = "localhost:6379"; });
+
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-      
+
       // CacheProfiles toevoegen
       services.AddMvc(options =>
       {
@@ -81,7 +77,7 @@ namespace ODT
             NoStore = true
           });
       });
-      
+
       services.AddMvc()
         .AddViewLocalization(
           LanguageViewLocationExpanderFormat.Suffix,
@@ -114,15 +110,10 @@ namespace ODT
       // response caching
       app.UseResponseCaching();
 
-      app.UseMvcWithDefaultRoute();
-      // end response caching
-      
-      /*app.UseMvc(routes =>
-      {
-        routes.MapRoute(
-          name: "default",
-          template: "{controller=Home}/{action=Index}/{id?}");
-      });*/
+      app.UseMvc(route =>
+        route.MapRoute(
+          name: "Default",
+          template: "{controller=Shop}/{action=Index}"));
     }
   }
 }
