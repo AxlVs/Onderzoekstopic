@@ -5,11 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using BL;
 using Domain;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Localization;
 using Newtonsoft.Json;
 using IFormFile = Microsoft.AspNetCore.Http.IFormFile;
@@ -67,26 +65,24 @@ namespace ODT.Controllers
 
       ViewBag.memoryCacheTime = currentTime;
       
-//      // Distributed Caching met Redis
-//      var cachedData = await _distributedCache.GetStringAsync("vlaggenJson");
-//      List<Vlag> vlaggen;
-//      
-//      if (string.IsNullOrEmpty(cachedData))
-//      {
-//        vlaggen = mgr.GetVlaggen().ToList();
-//        string json = JsonConvert.SerializeObject(vlaggen);
-//
-//        var options = new DistributedCacheEntryOptions()
-//          .SetAbsoluteExpiration(TimeSpan.FromMinutes(2));
-//        
-//        await _distributedCache.SetStringAsync("vlaggenJson", json, options);
-//      }
-//      else
-//      {
-//        vlaggen = JsonConvert.DeserializeObject<List<Vlag>>(cachedData);
-//      }
+      // Distributed Caching met Redis
+      var cachedData = await _distributedCache.GetStringAsync("vlaggenJson");
+      List<Vlag> vlaggen;
+      
+      if (string.IsNullOrEmpty(cachedData))
+      {
+        vlaggen = mgr.GetVlaggen().ToList();
+        string json = JsonConvert.SerializeObject(vlaggen);
 
-      List<Vlag> vlaggen = mgr.GetVlaggen().ToList();
+        var options = new DistributedCacheEntryOptions()
+          .SetAbsoluteExpiration(TimeSpan.FromMinutes(2));
+        
+        await _distributedCache.SetStringAsync("vlaggenJson", json, options);
+      }
+      else
+      {
+        vlaggen = JsonConvert.DeserializeObject<List<Vlag>>(cachedData);
+      }
       
       return View(vlaggen);
     }
