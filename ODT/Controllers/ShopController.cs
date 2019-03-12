@@ -36,6 +36,7 @@ namespace ODT.Controllers
     }
     
 //    [ResponseCache(CacheProfileName = "DefaultProfile")]
+    [Route("Shop")]
     public async Task<IActionResult> Index()
     { 
       // De titel via de controller meegeven, gebruik makend van de localizer
@@ -81,7 +82,7 @@ namespace ODT.Controllers
       return View(vlaggen);
     }
 
-    [Route("Flag")]
+    [Route("Shop/{id}")]
     [ResponseCache(CacheProfileName = "DefaultProfile", VaryByQueryKeys = new[] {"id"})]
     public IActionResult Flag(int id)
     {

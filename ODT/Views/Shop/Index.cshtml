@@ -25,13 +25,15 @@
     Console.WriteLine(CultureInfo.CurrentCulture.ToString());
     
     @*<cache expires-after="@TimeSpan.FromSeconds(5)" vary-by-route="@v.ID">*@
-    <div class="product current">
-        <img src="@v.Afbeelding" alt="@v.Beschrijving"/>
-        <h1>@v.Naam</h1>
-        <h2>@String.Format("{0:C}", v.Prijs)</h2>
-        <p>*last updated  @ViewBag.cacheTime</p>
-        <p>*last updated (In-Memory Cache) @ViewBag.memoryCacheTime</p>
-    </div>
+    <a asp-controller="Shop" asp-action="Flag" asp-route-id="@v.ID">
+        <div class="product current">
+            <img src="@v.Afbeelding" alt="@v.Beschrijving"/>
+            <h1>@v.Naam</h1>
+            <h2>@String.Format("{0:C}", v.Prijs)</h2>
+            <p>*last updated  @ViewBag.cacheTime</p>
+            <p>*last updated (In-Memory Cache) @ViewBag.memoryCacheTime</p>
+        </div>
+    </a>
     @*</cache>*@
     
     @* View Caching *@
@@ -40,6 +42,7 @@
          if (!vlag.LandCode.Equals(CultureInfo.CurrentCulture.ToString()))
          {          
 @*              <cache expires-after="@TimeSpan.FromSeconds(10)" vary-by-route="@vlag.ID, @CultureInfo.CurrentCulture.ToString()">     *@
+             <a asp-controller="Shop" asp-action="Flag" asp-route-id="@vlag.ID">
                  <div class="product">
                      <img src="@vlag.Afbeelding" alt="@vlag.Beschrijving"/>
                      <h1>@vlag.Naam</h1>
@@ -47,6 +50,7 @@
                      <p>*last updated (Response Caching) @ViewBag.cacheTime</p>
                      <p>*last updated (In-Memory Cache) @ViewBag.memoryCacheTime</p>
                  </div>
+             </a>
              @* </cache> *@
          }
      }

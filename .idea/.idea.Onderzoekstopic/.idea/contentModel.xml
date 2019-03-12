@@ -85,6 +85,7 @@
               <e p="Index.de.resx" t="Include" />
               <e p="Index.en.resx" t="Include" />
               <e p="Index.fr.resx" t="Include" />
+              <e p="Index.nl.resx" t="Include" />
             </e>
             <e p="Shared" t="Include">
               <e p="_Layout.de.resx" t="Include" />
