@@ -12,6 +12,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Localization;
 using Newtonsoft.Json;
+using IFormFile = Microsoft.AspNetCore.Http.IFormFile;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace ODT.Controllers
