@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Axl\.Rider2018.2\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\Axl\.Rider2018.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\Axl\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Axl\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Onderzoekstopic.-2130294640.00" t="ExcludeRecursive" />
-    <e p="D:\KDG\18 - 19\Onderzoekstoppics\Onderzoekstopic" t="IncludeFlat">
+    <e p="C:\Users\Buem\.Rider2018.2\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Buem\.Rider2018.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Buem\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Buem\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Onderzoekstopic.-1009588242.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Buem\Documents\School_18-19\Periode_3\NET_2\Project_Onderzoekstopics" t="IncludeFlat">
       <e p="BL" t="IncludeRecursive">
         <e p="Bin" t="ExcludeRecursive" />
         <e p="BL.csproj" t="IncludeRecursive" />
@@ -77,7 +77,9 @@
         <e p="Resources" t="Include">
           <e p="Controllers" t="Include">
             <e p="ShopController.de.resx" t="Include" />
+            <e p="ShopController.en.Designer.cs" t="Include" />
             <e p="ShopController.en.resx" t="Include" />
+            <e p="ShopController.fr.Designer.cs" t="Include" />
             <e p="ShopController.fr.resx" t="Include" />
             <e p="ShopController.nl.resx" t="Include" />
           </e>
@@ -121,6 +123,7 @@
             <e p="Error.cshtml" t="Include" />
           </e>
           <e p="Shop" t="Include">
+            <e p="Add.cshtml" t="Include" />
             <e p="Flag.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
           </e>
@@ -128,6 +131,7 @@
         <e p="Vlaggen_DB.db" t="Include" />
         <e p="Vlaggen_distr_DB.db" t="Include" />
         <e p="wwwroot" t="Include">
+          <e p="at-jake.png" t="Include" />
           <e p="css" t="Include">
             <e p="custom.css" t="Include" />
             <e p="custom_home.css" t="Include" />
@@ -137,9 +141,11 @@
           <e p="favicon.ico" t="Include" />
           <e p="images" t="Include">
             <e p="vlag" t="Include">
+              <e p="at-jake.png" t="Include" />
               <e p="belgie.png" t="Include" />
               <e p="duitsland.png" t="Include" />
               <e p="frankrijk.png" t="Include" />
+              <e p="image" t="Include" />
               <e p="nederland.png" t="Include" />
               <e p="verenigde_staten.png" t="Include" />
             </e>

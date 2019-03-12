@@ -1,0 +1,40 @@
+@model Domain.Vlag
+
+
+@section Style
+{
+    <link rel="stylesheet" href="css/custom.css"/>
+}
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>@ViewData["controllerTitle"]</h2>
+
+<form asp-controller="Shop" enctype="multipart/form-data"
+      asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Naam">Naam</label><input asp-for="Naam" class="form-control"/>
+        <span asp-validation-for="Naam" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LandCode">Landcode</label><input asp-for="LandCode" class="form-control"/>
+        <span asp-validation-for="LandCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Prijs">Prijs</label><input asp-for="Prijs" class="form-control"/>
+        <span asp-validation-for="Prijs" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Beschrijving">Beschrijving</label><input asp-for="Beschrijving" class="form-control"/>
+        <span asp-validation-for="Beschrijving" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <p>Upload one or more files using this form:</p>
+        <input type="file" name="image"/>
+    </div>
+    <input type="submit" value="Vlag toevoegen"/> | <a asp-action="Index">Annuleer</a>
+</form>
+
+<img href="#"/>

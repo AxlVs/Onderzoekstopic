@@ -22,5 +22,10 @@ namespace BL
     {
       return repo.ReadVlag(vlagId);
     }
+
+    public void AddVlag(Vlag vlag)
+    {
+      repo.AddVlag(vlag);
+    }
   }
 }

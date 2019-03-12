@@ -7,5 +7,6 @@ namespace BL
   {
     IEnumerable<Vlag> GetVlaggen();
     Vlag GetVlag(int vlagId);
+    void AddVlag(Vlag vlag);
   }
 }

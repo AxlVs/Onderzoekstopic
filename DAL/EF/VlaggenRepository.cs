@@ -23,5 +23,11 @@ namespace DAL.EF
     {
       return context.Vlags.Single(v => v.ID == vlagId);
     }
+
+    public void AddVlag(Vlag vlag)
+    {
+      context.Vlags.Add(vlag);
+      context.SaveChanges();
+    }
   }
 }

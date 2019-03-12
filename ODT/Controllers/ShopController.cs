@@ -1,16 +1,18 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using BL;
-using DAL.EF;
 using Domain;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Localization;
 using Newtonsoft.Json;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace ODT.Controllers
 {
@@ -27,16 +29,20 @@ namespace ODT.Controllers
     
     private IMemoryCache _memoryCache;
     
+    // Image uploaden
+    private readonly IHostingEnvironment he;
+    
     public ShopController(IStringLocalizer<ShopController> localizer,
-      IDistributedCache distributedCache, IMemoryCache memoryCache)
+      IDistributedCache distributedCache, IMemoryCache memoryCache,
+      Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
     {
       _localizer = localizer;
       _distributedCache = distributedCache;
       _memoryCache = memoryCache;
+      he = hostingEnvironment;
     }
     
 //    [ResponseCache(CacheProfileName = "DefaultProfile")]
-    [Route("Shop")]
     public async Task<IActionResult> Index()
     { 
       // De titel via de controller meegeven, gebruik makend van de localizer
@@ -60,37 +66,60 @@ namespace ODT.Controllers
 
       ViewBag.memoryCacheTime = currentTime;
       
-      // Distributed Caching met Redis
-      var cachedData = await _distributedCache.GetStringAsync("vlaggenJson");
-      List<Vlag> vlaggen;
-      
-      if (string.IsNullOrEmpty(cachedData))
-      {
-        vlaggen = mgr.GetVlaggen().ToList();
-        string json = JsonConvert.SerializeObject(vlaggen);
+//      // Distributed Caching met Redis
+//      var cachedData = await _distributedCache.GetStringAsync("vlaggenJson");
+//      List<Vlag> vlaggen;
+//      
+//      if (string.IsNullOrEmpty(cachedData))
+//      {
+//        vlaggen = mgr.GetVlaggen().ToList();
+//        string json = JsonConvert.SerializeObject(vlaggen);
+//
+//        var options = new DistributedCacheEntryOptions()
+//          .SetAbsoluteExpiration(TimeSpan.FromMinutes(2));
+//        
+//        await _distributedCache.SetStringAsync("vlaggenJson", json, options);
+//      }
+//      else
+//      {
+//        vlaggen = JsonConvert.DeserializeObject<List<Vlag>>(cachedData);
+//      }
 
-        var options = new DistributedCacheEntryOptions()
-          .SetAbsoluteExpiration(TimeSpan.FromMinutes(2));
-        
-        await _distributedCache.SetStringAsync("vlaggenJson", json, options);
-      }
-      else
-      {
-        vlaggen = JsonConvert.DeserializeObject<List<Vlag>>(cachedData);
-      }
+      List<Vlag> vlaggen = mgr.GetVlaggen().ToList();
       
       return View(vlaggen);
     }
 
-    [Route("Shop/{id}")]
     [ResponseCache(CacheProfileName = "DefaultProfile", VaryByQueryKeys = new[] {"id"})]
     public IActionResult Flag(int id)
     {
       ViewData["controllerTitle"] = _localizer["winkelTitel"];
-      ViewBag.cacheTime = DateTime.Now.ToLongTimeString();
+      ViewBag.cacheTime = DateTime.Now.ToLongDateString();
       
       Vlag v = mgr.GetVlag(id);
       return View(v);
+    }
+
+    [HttpGet]
+    public IActionResult Add()
+    {
+      ViewData["controllerTitle"] = _localizer["winkelTitel"];
+      return View();
+    }
+
+    [HttpPost]
+    public IActionResult Add([FromForm]Vlag vlag, [FromForm] IFormFile image)
+    {
+      Vlag toAddVlag = vlag;
+      if (image != null)
+      {
+        image.CopyTo(new FileStream("wwwroot/images/vlag/" + image.FileName, FileMode.Create));
+
+        toAddVlag.Afbeelding = image.FileName;
+      }
+
+      mgr.AddVlag(toAddVlag);
+      return RedirectToAction("Index");
     }
   }
 }

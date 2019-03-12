@@ -7,5 +7,6 @@ namespace DAL
   {
     IEnumerable<Vlag> ReadVlaggen();
     Vlag ReadVlag(int vlagId);
+    void AddVlag(Vlag vlag);
   }
 }
