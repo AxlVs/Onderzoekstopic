@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <data name="Nederlandse Vlaggen Winkel">
+        <value>English flag store</value>
+    </data>
+
+    <data name="Winkel">
+        <value>Shop</value>
+    </data>
+</root>

@@ -4,4 +4,23 @@
     <data name="winkelDescription">
         <value>Magasin des drapeaux European descriptif</value>
     </data>
+    
+    
+    <!--
+    <data name="Language:">
+        <value>Langue:</value>
+    </data>
+    <data name="Belgie">
+        <value>Belgique</value>
+    </data>
+    <data name="Nederland">
+        <value>Neerlandais</value>
+    </data>
+    <data name="Frankrijk">
+        <value>France</value>
+    </data>
+    <data name="Verenigde Staten">
+        <value>Etats Unis</value>
+    </data>
+    -->
 </root>

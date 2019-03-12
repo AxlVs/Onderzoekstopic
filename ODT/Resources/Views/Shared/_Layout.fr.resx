@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <data name="Nederlandse Vlaggen Winkel">
+        <value>Magasin des drapeaux Français</value>
+    </data>
+
+    <data name="Winkel">
+        <value>Magasin</value>
+    </data>
+</root>
